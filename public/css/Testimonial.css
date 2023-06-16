@@ -1,0 +1,80 @@
+.container-card{
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-card h1{
+    margin-bottom: 10px;
+}
+.testimoni{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+
+}
+.testimonial{
+    width: 25%;
+    margin: 0 15px 30px 15px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.2);
+    border-radius: 3px 3px 10px 10px;
+}
+.testimonial .profil-testimonial{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.coment{
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.rating{
+    margin-top: 0;
+    text-align: center;
+}
+
+.btn-rating{
+    display: flex;
+    justify-content: center;
+}
+.btn-rating button{
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.author{
+    font-weight: bold;
+    text-align: right;
+}
+@media only screen and (max-width: 856px) {
+    .testimonial{
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 686px) {
+    .testimonial{
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .testimonial{
+        width: 80%;
+    }
+    .coment{
+        font-size: small;
+    }
+    .author{
+        font-size: small;
+    }
+}

@@ -1,0 +1,71 @@
+.container-fluid{
+    font-family: 'Poppins', sans-serif !important;
+}
+.kartuproject{
+    padding-top: 0px;
+    width: 300px !important;
+    min-height: 400px !important;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px #dbdbdb;
+}
+
+.content img{
+    max-width: 100%;
+    min-height: 200px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: cover !important;
+}
+
+.content a{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.content h4{
+    text-align: left;
+    font-size: large;
+    color: #080808;
+}
+
+.content a h4:hover{
+    color: #2b397c;
+}
+
+.content span{
+    text-align: left;
+    font-size:small;
+    color: #bbb8b8;
+}
+
+.content .text {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.content .text p{
+    text-align: justify;
+    font-weight: 300;
+    font-size: small;
+}
+
+.content .tech{
+    padding-right: 40%;
+    padding-left: 0%;
+}
+.content .tech i{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: xx-large;
+}
+/* 
+.kartuproject button{
+    color: #f5f5f5 !important;
+    background-color: #000 !important;
+    border-radius: 10px !important;
+    width: auto !important;
+    font-weight: 500 !important;
+    margin-left: 5px !important;
+    padding: 3px 12px !important;
+    cursor: pointer !important;
+} */

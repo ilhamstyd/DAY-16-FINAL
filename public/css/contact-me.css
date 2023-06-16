@@ -1,0 +1,72 @@
+form{
+    background-color: #dfe2e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-form{
+    margin: 5% 0;
+}
+
+.container-form h1{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.container-form label{
+    font-weight: 500;
+}
+
+.container-form input{
+    margin-top: 3px;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    outline: none;
+    box-shadow: 2px 2px #dbdbdb;
+}
+
+.subject select{
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    height: 30px;
+    outline: none;
+    box-shadow: 2px 2px #dbdbdb;
+}
+
+.message textarea{
+    width: 100%;
+    resize: none;
+    outline: none;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    height: 120px;
+    padding: 5px;
+    box-shadow: 2px 2px #dbdbdb;
+}
+
+.btn button{
+    border: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 0 20px #dbdbdb;
+    padding: 4px 25px;
+    float:right;
+    cursor: pointer;
+}
+
+.btn button:hover{
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+}
+
