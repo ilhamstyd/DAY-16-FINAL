@@ -381,9 +381,16 @@ func formRegist(c echo.Context) error {
 		userdata.IsLogin = sess.Values["isLogin"].(bool)
 		userdata.Name = sess.Values["name"].(string)
 	}
+
 	snap := map[string]interface{}{
+		"SnapStatus":  sess.Values["status"],
+		"SnapMessage": sess.Values["message"],
 		"DataSession": userdata,
 	}
+	delete(sess.Values, "message")
+	delete(sess.Values, "status")
+	sess.Save(c.Request(), c.Response())
+
 	return tmpl.Execute(c.Response(), snap)
 }
 
@@ -396,15 +403,15 @@ func regist(c echo.Context) error {
 	email := c.FormValue("input-email")
 	password := c.FormValue("input-pass")
 
-	// Check if email or name already exists in tb_user
+	// Check if email already exists in tb_user
 	var count int
-	err = connection.Conn.QueryRow(context.Background(), "SELECT COUNT(*) FROM tb_user WHERE email = $1 OR name = $2", email, name).Scan(&count)
+	err = connection.Conn.QueryRow(context.Background(), "SELECT COUNT(*) FROM tb_user WHERE email = $1", email).Scan(&count)
 	if err != nil {
 		return redirectWithMessage(c, "regist failed bro", false, "/form-regist")
 	}
 
 	if count > 0 {
-		return redirectWithMessage(c, "Email or name already exists", false, "/form-regist")
+		return redirectWithMessage(c, "Email already exists", false, "/form-regist")
 	}
 
 	passwordHash, _ := bcrypt.GenerateFromPassword([]byte(password), 10)
@@ -413,7 +420,8 @@ func regist(c echo.Context) error {
 	if err != nil {
 		return redirectWithMessage(c, "regist failed bro", false, "/form-regist")
 	}
-	return redirectWithMessage(c, "your regist success bro", true, "/form-login")
+
+	return redirectWithMessage(c, "Your registration is successful", true, "/form-login")
 }
 
 func formLogin(c echo.Context) error {
@@ -480,5 +488,6 @@ func redirectWithMessage(c echo.Context, message string, status bool, path strin
 	sess.Values["message"] = message
 	sess.Values["status"] = status
 	sess.Save(c.Request(), c.Response())
+	fmt.Println("message", message)
 	return c.Redirect(http.StatusMovedPermanently, path)
 }
